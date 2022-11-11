@@ -7,7 +7,7 @@ import ServiceCard from "./ServiceCard";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://assingment-server-11.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -23,21 +23,17 @@ const Services = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2  my-10 gap-20 ">
-        {services?.slice(0,3).map((service) => (
+        {services?.slice(0, 3).map((service) => (
           <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
       </div>
       <div>
-      <button className="btn btn-outline btn-success ml-96 mb-10">
-
-      <Link to='/service'>See All</Link>
-    
-      </button>
+        <button className="btn btn-outline btn-success ml-96 mb-10">
+          <Link to="/service">See All</Link>
+        </button>
       </div>
     </>
-    
   );
 };
 
 export default Services;
-

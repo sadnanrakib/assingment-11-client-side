@@ -8,36 +8,38 @@ import Login from "../Pages/Login/Login";
 import SingUp from "../Pages/singUp/SingUp";
 
 export const router = createBrowserRouter([
-    {
-        path:'/',
-        element:<Main></Main>,
-        children:[
-            {
-                path:'/',
-                element:<Home></Home>
-            },
-            {
-                path:'/blog',
-                element:<Blog></Blog>,
-            },
-            {
-                path:'/service',
-                element:<Service></Service>,
-              
-            },
-            {
-                path:'/checkout/:id',
-                element:<CheckOut></CheckOut>,
-                loader:({params})=> fetch(`http://localhost:5000/services/${params.id}`)
-            },
-            {
-                path:'/login',
-                element:<Login></Login>
-            },
-            {
-                path:'/singup',
-                element:<SingUp></SingUp>
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/service",
+        element: <Service></Service>,
+      },
+      {
+        path: "/checkout/:id",
+        element: <CheckOut></CheckOut>,
+        loader: ({ params }) =>
+          fetch(
+            `https://assingment-server-11.vercel.app/services/${params.id}`
+          ),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/singup",
+        element: <SingUp></SingUp>,
+      },
+    ],
+  },
+]);
