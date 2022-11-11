@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import img from '../../assets/images/login/login.svg'
+import img from '../../assets/images/banner/images.png'
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Login = () => {
@@ -23,7 +23,7 @@ const Login = () => {
     <div className="hero w-full my-20">
       <div className="hero-content gap-20 grid grid-cols-2 flex-col lg:flex-row">
         <div className="text-center lg:text-left">
-          <img className="w-3/4" src={img} alt="" />
+          <img className="w-96 h-96" src={img} alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl  py-20 bg-base-100">
         <h1 className="text-5xl font-bold text-center">Login</h1>
@@ -48,9 +48,9 @@ const Login = () => {
                 className="input input-bordered"
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <Link href="#" className="label-text-alt link link-hover">
                   Forgot password?
-                </a>
+                </Link>
               </label>
             </div>
             <div className="form-control mt-6">
